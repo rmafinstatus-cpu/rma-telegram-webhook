@@ -1,0 +1,28 @@
+{
+  "name": "rma-finance-telegram-webhook",
+  "version": "3.0.0",
+  "description": "RMA Finance Telegram Bot - Webhook Server",
+  "main": "telegram_webhook_server.js",
+  "scripts": {
+    "start": "node telegram_webhook_server.js",
+    "dev": "nodemon telegram_webhook_server.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "rma",
+    "finance"
+  ],
+  "author": "RMA Finance",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
