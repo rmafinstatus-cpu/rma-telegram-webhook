@@ -150,16 +150,20 @@ async function answerCallback(cbId, text = null) {
   }
 }
 
-// ========== WEBHOOK SETUP ==========
-app.post('/setup-webhook', async (req, res) => {
+// ========== WEBHOOK SETUP (GET aur POST dono) ==========
+async function setupWebhook(req, res) {
   try {
     const webhookUrl = `${process.env.RENDER_EXTERNAL_URL}/webhook/${BOT_TOKEN}`;
+    
+    console.log(`🔧 Setting webhook to: ${webhookUrl}`);
     
     // Remove old webhook
     await axios.post(`${TELEGRAM_API}/setWebhook`, {
       url: "",
       drop_pending_updates: true
     });
+    
+    console.log(`✅ Old webhook removed`);
     
     // Set new webhook
     const response = await axios.post(`${TELEGRAM_API}/setWebhook`, {
@@ -168,13 +172,13 @@ app.post('/setup-webhook', async (req, res) => {
       drop_pending_updates: false
     });
     
+    console.log(`✅ New webhook set!`, response.data);
+    
     res.json({
       status: "Webhook setup successful ✅",
       url: webhookUrl,
       telegram_response: response.data
     });
-    
-    console.log(`✅ Webhook set to: ${webhookUrl}`);
     
   } catch (error) {
     console.error("Setup error:", error.message);
@@ -183,7 +187,10 @@ app.post('/setup-webhook', async (req, res) => {
       error: error.message
     });
   }
-});
+}
+
+app.get('/setup-webhook', setupWebhook);
+app.post('/setup-webhook', setupWebhook);
 
 // ========== BOT INFO ==========
 app.get('/bot-info', async (req, res) => {
