@@ -10,7 +10,7 @@ const axios = require('axios');
 // ========== CONFIG ==========
 const BOT_TOKEN = "8811324859:AAEZ4I5Yxhxbts9fYhgCYwcNlXdCDOCI8AU";
 const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}`;
-const GAS_WEB_APP = "YOUR_GAS_DEPLOYMENT_URL"; // ⬅️ Replace with your GAS web app URL
+const GAS_WEB_APP = "https://script.google.com/macros/s/AKfycbzuTXp6unIdfjlTgbIAo_Q31sMMq_YVyu2c5eOpCdF7MONObEvCARud0HJKGFLNpCi7vQ/exec"; // ⬅️ Replace with your GAS web app URL
 const PORT = process.env.PORT || 3000;
 
 // ========== MIDDLEWARE ==========
