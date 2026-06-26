@@ -10,7 +10,7 @@ const axios = require('axios');
 // ========== CONFIG ==========
 const BOT_TOKEN = "8811324859:AAEZ4I5Yxhxbts9fYhgCYwcNlXdCDOCI8AU";
 const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}`;
-const GAS_WEB_APP = "https://script.googleapis.com/macros/d/AKfycbwbB9bKdD--zrP98nWoKbR2O_fOJIqxHD9HS7mPGUNVRyP9E6A6NHuLdK99gzzrG2oc/userweb";
+const GAS_WEB_APP = "https://script.googleapis.com/macros/d/AKfycbyuxIzGTEQrGQdTWwVy36aQfm_2BkmbkKzG6TcDMVCSPA4o0ytnoaVlAEPWoN_KbMo3/userweb";
 const PORT = process.env.PORT || 3000;
 
 // ========== MIDDLEWARE ==========
